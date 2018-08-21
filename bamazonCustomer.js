@@ -11,7 +11,11 @@ const connection = mysql.createConnection({
   
   connection.connect(function(err) {
     if (err) throw err;
-    let query = "SELECT * FROM products";
+   showProducts();
+  });
+
+  function showProducts() {
+    const query = "SELECT * FROM products";
     connection.query(query, function(err, res) {
         if (err) throw err;
         for (var i = 0; i < res.length; i++) {
@@ -22,4 +26,5 @@ const connection = mysql.createConnection({
                 "\nPrice: " + "$" + res[i].price + "\n*~*~*~*~*~*~*~\n")
           }
     })
-  });
+  };
+
