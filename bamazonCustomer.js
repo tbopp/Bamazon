@@ -74,7 +74,7 @@ const connection = mysql.createConnection({
                 res[i].year
             );
           }
-          ();
+          
         });
       });
   }
